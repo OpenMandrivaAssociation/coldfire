@@ -10,6 +10,7 @@ Group: Emulators
 License: GPL
 BuildRequires: libreadline-devel
 BuildRequires: libncurses-devel
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %description
 Coldfire is a Freescale Coldfire 5206 Emulator. It currently features
