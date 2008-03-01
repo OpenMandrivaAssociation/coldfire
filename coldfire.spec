@@ -1,11 +1,10 @@
 Name: coldfire
-Version: 0.2.2
-Release: %mkrel 2
+Version: 0.3.1
+Release: %mkrel 1
 Summary: A Freescale Coldfire 5206 Emulator
 URL: http://www.slicer.ca/coldfire/
 Source: http://www.slicer.ca/coldfire/files/coldfire-%{version}.tar.gz
-Patch0: coldfire-0.2.2-gcc4.patch.bz2
-Patch1: coldfire-0.2.2-manpage.patch.bz2
+Patch1: coldfire-0.2.2-manpage.patch
 Group: Emulators
 License: GPL
 BuildRequires: libreadline-devel
@@ -21,7 +20,6 @@ full tracing capability.
 
 %prep
 %setup -q
-%patch0 -p1 -b .gcc4
 %patch1 -p1 -b .manpage
 
 %build
@@ -43,7 +41,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README AUTHORS LICENSE
+%doc README LICENSE
 %{_bindir}/coldfire
 %{_mandir}/man1/coldfire.1*
 %{_datadir}/coldfire/*
