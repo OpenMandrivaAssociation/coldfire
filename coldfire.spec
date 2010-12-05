@@ -1,6 +1,6 @@
 Name:		coldfire
 Version:	0.3.1
-Release:	%mkrel 6
+Release:	%mkrel 7
 Summary:	A Freescale Coldfire 5206 Emulator
 URL:		http://www.slicer.ca/coldfire/
 Source:		http://www.slicer.ca/coldfire/files/coldfire-%{version}.tar.gz
