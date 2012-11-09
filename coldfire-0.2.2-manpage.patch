@@ -1,0 +1,47 @@
+diff -rud --new-file coldfire-0.2.2-orig/coldfire.1 coldfire-0.2.2/coldfire.1
+--- coldfire-0.2.2-orig/coldfire.1	1970-01-01 01:00:00.000000000 +0100
++++ coldfire-0.2.2/coldfire.1	2005-07-02 23:31:17.000000000 +0200
+@@ -0,0 +1,43 @@
++.TH "COLDFIRE" "1" 
++.SH "NAME" 
++coldfire \(em A Freescale Coldfire 5206 Emulator 
++.SH "SYNOPSIS" 
++.PP 
++\fBcoldfire\fR [\fB\-\-board \fIfilename\fR\fP]  [\fB\-\-timerhack\fP]  
++.SH "DESCRIPTION" 
++.PP 
++\fBcoldfire\fR is a is a Freescale Coldfire 
++5206 Emulator. It currently features all but 5 assembly instructions, 
++a full dBug with extra functionality, both serial ports, the parallel 
++port, interrupts (through telnet sessions), full exception handling, 
++timers and timer interrupts, and full tracing capability. 
++.SH "OPTIONS" 
++.PP 
++These programs follow the usual GNU command line syntax, 
++with long options starting with two dashes (`\-').  A summary of 
++options is included below. 
++.IP "\fB\-\-board\fP \fIfilename\fR         " 10 
++Load board configuration file. 
++.IP "\fB\-\-timerhack\fP         " 10 
++Change the timer so the TRR ticks once per instruction, 
++instead of at an almost correct rate based on cycles 
++executed. 
++.IP "\fB-h\fP, \fB\-\-help\fP         " 10 
++Show summary of options. 
++.IP "\fB-v\fP, \fB\-\-version\fP         " 10 
++Show version of program. 
++.SH "FILES" 
++.PP 
++/usr/share/coldfile/* \- board configuration files 
++.SH "AUTHOR" 
++.PP 
++David Grant and others, see the AUTHORS file for the full list 
++of credits. 
++.PP 
++This manual page was written by Claudio Matsuoka <claudio@mandriva.com> for 
++the \fBDebian\fP system (but may be used by others).  Permission is 
++granted to copy, distribute and/or modify this document under 
++the terms of the GNU General Public License, Version 2 any  
++later version published by the Free Software Foundation. 
++ 
++.\" created by instant / docbook-to-man, Thu 30 Jun 2005, 00:25 
