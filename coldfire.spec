@@ -1,15 +1,15 @@
 Name:		coldfire
 Version:	0.3.1
-Release:	%mkrel 7
+Release:	8
 Summary:	A Freescale Coldfire 5206 Emulator
-URL:		http://www.slicer.ca/coldfire/
-Source:		http://www.slicer.ca/coldfire/files/coldfire-%{version}.tar.gz
-Patch1:		coldfire-0.2.2-manpage.patch
 Group:		Emulators
 License:	GPLv2
-BuildRequires:	libreadline-devel
-BuildRequires:	libncurses-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+URL:		http://www.slicer.ca/coldfire/
+Source:		http://www.slicer.ca/coldfire/files/coldfire-%{version}.tar.gz
+Patch0:		coldfire-0.3.1-headers.patch
+Patch1:		coldfire-0.2.2-manpage.patch
+BuildRequires:	readline-devel
+BuildRequires:	pkgconfig(ncurses)
 
 %description
 Coldfire is a Freescale Coldfire 5206 Emulator. It currently features
@@ -20,6 +20,7 @@ full tracing capability.
 
 %prep
 %setup -q
+%patch0 -p1 -b .headers
 %patch1 -p1 -b .manpage
 
 %build
@@ -27,19 +28,14 @@ full tracing capability.
 make
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_datadir}/coldfire
-install -s -m 755 coldfire %{buildroot}%{_bindir}/coldfire
+install -m 755 coldfire %{buildroot}%{_bindir}/coldfire
 install -m 644 coldfire.1 %{buildroot}%{_mandir}/man1/coldfire.1
 install -m 644 boards/* %{buildroot}%{_datadir}/coldfire/
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README LICENSE
 %{_bindir}/coldfire
 %{_mandir}/man1/coldfire.1*
