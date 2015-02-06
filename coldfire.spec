@@ -1,6 +1,6 @@
 Name:		coldfire
 Version:	0.3.1
-Release:	8
+Release:	9
 Summary:	A Freescale Coldfire 5206 Emulator
 Group:		Emulators
 License:	GPLv2
