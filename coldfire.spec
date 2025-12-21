@@ -8,6 +8,11 @@ URL:		https://www.slicer.ca/coldfire/
 Source:		http://www.slicer.ca/coldfire/files/coldfire-%{version}.tar.gz
 Patch0:		coldfire-0.3.1-headers.patch
 Patch1:		coldfire-0.2.2-manpage.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	readline-devel
 BuildRequires:	pkgconfig(ncurses)
 
